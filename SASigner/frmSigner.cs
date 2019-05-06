@@ -199,7 +199,7 @@ namespace SASigner
 
         private void CanSign()
         {
-            DisplayMessage(String.Empty);
+            DisplayMessage(string.Empty);
             btnFileClear.Enabled = lstFiles.Items.Count > 0;
             try
             {
@@ -222,7 +222,7 @@ namespace SASigner
 
         private void Sign()
         {
-            int counter = 0;
+            var counter = 0;
 
             btnSign.Enabled = false;
             SetEnabledStatus(false);
@@ -237,7 +237,7 @@ namespace SASigner
 
                 proc.WaitForExit();
 
-                string output = proc.StandardOutput.ReadToEnd();
+                var output = proc.StandardOutput.ReadToEnd();
                 if (!string.IsNullOrEmpty(output)) lstOutput.Items.Add(output);
 
                 if (proc.ExitCode == 1)
