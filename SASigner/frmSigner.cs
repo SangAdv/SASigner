@@ -256,7 +256,7 @@ namespace SASigner
 
         private ProcessStartInfo GetStartInfo(List<string> fileNames)
         {
-            StringBuilder arg = new StringBuilder("sign");
+            var arg = new StringBuilder("sign");
 
             //If verbose
             if (!chkDetailOutput.Checked) arg.Append(@" /v");
@@ -282,8 +282,8 @@ namespace SASigner
 
         private string GetFilenameArgument(List<string> fileNames)
         {
-            StringBuilder fileArg = new StringBuilder();
-            foreach (string fName in fileNames) fileArg.Append($" \"{fName}\"");
+            var fileArg = new StringBuilder();
+            foreach (var fName in fileNames) fileArg.Append($" \"{fName}\"");
             return fileArg.ToString();
         }
 
